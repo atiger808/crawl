@@ -120,7 +120,8 @@ def main(offset, tag):
     limit = 20
     page_start = 20
     for i in range(offset):
-        url = 'https://movie.douban.com/j/search_subjects?type=movie&tag={}&page_limit={}0&page_start={}'.format(tag, limit, page_start * i)
+        url = 'https://movie.douban.com/j/search_subjects?type=movie&tag={}\
+        &page_limit={}0&page_start={}'.format(tag, limit, page_start * i)
         load_one_page(url, tag)
 
 # 主入口
@@ -129,7 +130,8 @@ def enter():
     if not os.path.exists('d:/csv/豆瓣电影'):
         os.makedirs('d:/csv/豆瓣电影')
     os.chdir('d:/csv/豆瓣电影')
-    tags = ['热门', '最新', '经典', '可播放', '豆瓣高分', '冷门佳片', '华语', '欧美', '韩国', '日本', '动作', '喜剧', '爱情', '科幻', '悬疑', '恐怖', '文艺']
+    tags = ['热门', '最新', '经典', '可播放', '豆瓣高分', '冷门佳片', '华语', '欧美',\
+            '韩国', '日本', '动作', '喜剧', '爱情', '科幻', '悬疑', '恐怖', '文艺']
     for tag in tags:
         main(10, tag)
 
